@@ -13,7 +13,7 @@ interface GitHubRepoResponse {
   forks_count: number;
 }
 
-// 🔧 TOOL: Fetch GitHub Repositories
+// Fetch GitHub Repositories
 export const githubRepoTool = createTool({
   id: "fetch-github-repos",
   description: "Fetch public GitHub repositories of a user",
@@ -49,9 +49,8 @@ export const githubRepoTool = createTool({
   },
 });
 
-// -----------------------------------
+
 // Helper: extract username from URL
-// -----------------------------------
 function extractUsername(input: string): string | null {
   try {
     if (input.startsWith("http")) {
@@ -64,9 +63,8 @@ function extractUsername(input: string): string | null {
   }
 }
 
-// -----------------------------------
+
 // Helper: fetch repos from GitHub API
-// -----------------------------------
 async function fetchRepos(username: string) {
   const response = await fetch(`https://api.github.com/users/${username}/repos`);
 

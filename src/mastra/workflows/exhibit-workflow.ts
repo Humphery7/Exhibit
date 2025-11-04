@@ -22,7 +22,7 @@ const fetchRepos = createStep({
   execute: async ({ inputData }) => {
     if (!inputData) throw new Error("Input data required");
 
-    // ✅ Call GitHub API directly (same as tool does)
+    // Call GitHub API directly (same as tool does)
     const response = await fetch(`https://api.github.com/users/${inputData.githubUsername}/repos`);
     if (!response.ok) {
       throw new Error(`GitHub user '${inputData.githubUsername}' not found`);
@@ -98,7 +98,7 @@ const generatePortfolio = createStep({
 });
 
 
-// ✅ FINAL WORKFLOW
+// FINAL WORKFLOW
 const exhibitWorkflow = createWorkflow({
   id: "exhibit-workflow",
   inputSchema: z.object({

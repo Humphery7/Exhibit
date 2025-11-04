@@ -3,16 +3,16 @@ import { createToolCallAccuracyScorerCode } from "@mastra/evals/scorers/code";
 import { createCompletenessScorer } from "@mastra/evals/scorers/code";
 import { createScorer } from "@mastra/core/scores";
 
-// ✅ Checks if the agent used the github tool correctly
+// Checks if the agent used the github tool correctly
 export const toolCallAppropriatenessScorer = createToolCallAccuracyScorerCode({
   expectedTool: "githubRepoTool",
   strictMode: false,
 });
 
-// ✅ Generic completeness scorer (built-in)
+// Generic completeness scorer (built-in)
 export const completenessScorer = createCompletenessScorer();
 
-// ✅ Our custom scorer: evaluates the portfolio content returned by the agent
+// Our custom scorer: evaluates the portfolio content returned by the agent
 export const portfolioQualityScorer = createScorer({
   name: "Portfolio Quality Score",
   description: "Evaluates if the generated portfolio contains key sections",
